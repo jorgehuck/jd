@@ -71,3 +71,18 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Docker
+
+Para crear la imagen
+
+```
+docker build -t appjohndeere .
+```
+
+Para levantar la aplicación (el puerto se puede mapear el que gusten ;) )
+
+```
+docker run -d -it -p 8040:8040 appjohndeere 
+```
