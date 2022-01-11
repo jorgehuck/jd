@@ -41,3 +41,10 @@ docker run -d -it -p 8040:8040 appjohndeere
 
 La API está a la escucha en la url HOST:8040/callback de las credenciales necesarias. Estas se guardan en un archivo llamado 'datos.json' en la raiz del proyecto.
 Cada request con datos válidos actualiza el contenido del archivo datos.json.
+
+## Endpoints
+
+La API expone dos endpoint en las siguientes URL
+
+- HOST:8040/callback (para usan en la plataforma de John Deere)
+- HOST:8040/callback/result (para obtener los datos enviados por John Deere)
