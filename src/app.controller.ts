@@ -7,8 +7,15 @@ export class AppController {
 
   @Get('')
   getData(@Query() query): string {
-    console.log('Params :: ', query );
-    
+    console.log('Params :: ', query);
+
     return this.appService.getData(query);
+  }
+
+  @Get('result')
+  async getResultData(@Query() query): Promise<string> {
+    console.log('getResultData');
+
+    return await this.appService.getResultData();
   }
 }

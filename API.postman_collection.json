@@ -11,24 +11,47 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8040/callback?code=uncode1&status=unstatus23",
-					"protocol": "http",
+					"raw": "{{url}}/callback?code=uncodeNuevo&status=unstatus23Nuevo",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8040",
 					"path": [
 						"callback"
 					],
 					"query": [
 						{
 							"key": "code",
-							"value": "uncode1"
+							"value": "uncodeNuevo"
 						},
 						{
 							"key": "status",
-							"value": "unstatus23"
+							"value": "unstatus23Nuevo"
 						},
+						{
+							"key": "nova",
+							"value": "nova",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "code result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/callback/result",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"callback",
+						"result"
+					],
+					"query": [
 						{
 							"key": "nova",
 							"value": "nova",

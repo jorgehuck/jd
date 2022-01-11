@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import * as fs from 'fs';
+import { promises as fs } from 'fs';
+import * as _fs from 'fs';
 
 @Injectable()
 export class AppService {
@@ -14,7 +15,7 @@ export class AppService {
   getData(data): string {
     // evaluar que query tenga los datos necesarios
     if (data.hasOwnProperty('code') && data.hasOwnProperty('status')) {
-      fs.writeFileSync(
+      _fs.writeFileSync(
         'datos.json',
         JSON.stringify({ code: data.code, status: data.status }),
       );
@@ -22,5 +23,14 @@ export class AppService {
     }
 
     return 'Faltan campos';
+  }
+
+  /**
+   *
+   * @param data
+   * @returns
+   */
+  async getResultData():Promise<string> {
+    return JSON.parse( await fs.readFile('datos.json', 'utf8') );
   }
 }
